@@ -1,0 +1,32 @@
+#Blockchain program
+#Program updated on 4/3/2019
+
+#Begin program
+#____________________
+
+import hashlib
+import json
+import time
+
+block_index = 0; chain_lib = []; counter = 0
+
+def new_genesis():
+	d = {}
+	d['index'] = block_index
+	print("\n"*5)
+	a = input("Please enter your initial data batch:  ")
+	d['self_block'] = a
+	d['time record'] = time.time()
+	d['previous hash'] = None
+	return d
+
+def new_block():
+	d = {}
+	d['index'] = block_index
+	print("\n"*5)
+	e = input("Please enter your data batch:  ")
+	d['self_block'] = e
+	d['time record'] = time.time()
+	d['previous hash'] = chain_lib[counter][0]
+	return d
+
