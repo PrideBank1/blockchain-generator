@@ -30,3 +30,24 @@ def new_block():
 	d['previous hash'] = chain_lib[counter][0]
 	return d
 
+def start():
+	g = new_genesis()
+	g_list = []
+	g_list.append(g)
+	g_serial = json.dumps(g, sort_keys=True).encode('utf-8')
+	g_hash = hashlib.sha256(g_serial).hexdigest()
+	g_list.append(g_hash)
+	chain_lib.append(g_list)
+
+def next():
+	c = new_block()
+	c_list = []
+	c_list.append(c)
+	c_serial = json.dumps(c, sort_keys=True).encode('utf-8')
+	c_hash = hashlib.sha256(c_serial).hexdigest()
+	c_list.append(c_hash)
+	chain_lib.append(c_list)
+
+
+#End of program
+#____________________
