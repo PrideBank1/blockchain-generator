@@ -1,11 +1,4 @@
 Program Notes
 ____________________
 
--With the exception of one bug (having each block recognize the previous block), this program works.
-
--The program successfully serializes and hashes the data that is put into it, and is stored in a chain.
-
--I will upload an updated version of this program that allows each new block to record its  previous hash.  I am close to solving this bug and will do so soon.
-
--Please also note that, though the blocks cannot yet recognize their previous hashes, each block DOES HAVE its own unique time stamp, which helps ensure the integity of each transaction contained within each block.
 
