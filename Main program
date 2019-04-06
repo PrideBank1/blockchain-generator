@@ -51,6 +51,9 @@ def next():
 	c_list.append(c_hash)
 	chain_lib.append(c_list)
 
+def count():
+	print("{0}{1} blocks have been added to the block chain.{0}".format("\n"*5,len(counter)))
+
 
 #End of program
 #____________________
