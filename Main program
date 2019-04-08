@@ -6,7 +6,7 @@
 
 import hashlib
 import json
-import time
+import datetime
 
 anchor = ["Index = None", "Time = None", "None", "Prev = None"]
 
@@ -30,7 +30,7 @@ def new_block():
 		print("\n"*5)
 	spacer(); b = input("Please enter your data here:  "); spacer()
 	make_prev = chron_memory[len(chron_memory)-1][2]
-	s = block(len(chron_memory), time.time(), b, "prev block = {0}".format(make_prev))
+	s = block(len(chron_memory), datetime.datetime.now(), b, "prev block = {0}".format(make_prev))
 	e = {}
 	temp_list = []
 	temp_list.append(s.index); temp_list.append(s.timestamp);
