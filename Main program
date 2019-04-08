@@ -55,5 +55,49 @@ def count():
 	print("{0}{1} blocks have been added to the block chain.{0}".format("\n"*5,len(counter)))
 
 
+
+____________________
+Updated verison of the program (as of 4/7/2019).
+
+
+anchor = ["Index = None", "Time = None", "None", "Prev = None"]
+
+master_memory = []; chron_memory = []; chron_memory.append(anchor)
+
+class block:
+	def __init__(self, index, timestamp, data, prev):
+		self.index = index
+		self.timestamp = timestamp
+		self.data = data
+		self.prev = prev
+		self.hash = self.hash_block()
+	def hash_block(self):
+		a = (str(self.index)+str(self.timestamp)+str(self.data)+str(self.prev))
+		a_ser = json.dumps(a, sort_keys=True).encode('utf-8')
+		a_hash = hashlib.sha256(a_ser).hexdigest()
+		rrr = a_hash
+
+def new_block():
+	def spacer():
+		print("\n"*5)
+	spacer(); b = input("Please enter your data here:  "); spacer()
+	make_prev = chron_memory[len(chron_memory)-1][2]
+	s = block(len(chron_memory), time.time(), b, "prev block = {0}".format(make_prev))
+	e = {}
+	temp_list = []
+	temp_list.append(s.index); temp_list.append(s.timestamp);
+	temp_list.append(s.data); temp_list.append(s.prev)
+	e["  DATA BATCH:  "] = temp_list
+	master_memory.append(e); chron_memory.append(temp_list)
+	return e; spacer();
+
+def view_chain():
+	x = 0
+	f = len(chron_memory)
+	while x < f:
+		print("Block {0}:  {1}{2}".format(x, chron_memory[x], "\n"))
+		x = x + 1
+
+
 #End of program
 #____________________
