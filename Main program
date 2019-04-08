@@ -46,5 +46,12 @@ def view_chain():
 		print("Block {0}:  {1}{2}".format(x, chron_memory[x], "\n"))
 		x = x + 1
 
+def hash(x):
+	a_hash = str(x)
+	a_hash_ser = json.dumps(a_hash, sort_keys=True).encode('utf-8')
+	a_hash_ser_hash = hashlib.sha256(a_hash_ser).hexdigest()
+	print(a_hash)
+	print(a_hash_ser_hash)
+
 #End of program
 #____________________
