@@ -1,4 +1,4 @@
 Program Notes
 ____________________
 
-
+-The current verison of the program has the hash functions within the block class.  The program needs to be updated so that the hash functions are within the 'new_block()' function.
