@@ -88,16 +88,14 @@ def new_block():
 	s = block(len(chron_memory), datetime.datetime.now(), b, "prev block = {0}".format(make_prev))
 	e = {}
 	temp_list = []
-	print(temp_list)
 	temp_list.append(s.index); temp_list.append(s.timestamp);
 	temp_list.append(s.data); temp_list.append(s.prev)
-	print(temp_list)
 	hh=hash(temp_list);temp_list.append(hh)
-	print(temp_list)
 	zz = "Block {0} Hash ID:  {1}".format(s.index,hh)
 	hash_memory.append(zz)
 	e["  DATA BATCH:  "] = temp_list
 	master_memory.append(e); chron_memory.append(temp_list); spacer();
+	return 'New block added to the blockchain.  To see blockchain, type view_chain().'
 
 def view_chain():
 	x = 0
