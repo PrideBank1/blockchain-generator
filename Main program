@@ -1,62 +1,8 @@
 #Blockchain program
-#Updated verison of the program (as of 4/7/2019).
+#Updated verison of the program (as of 4/14/2019).
 
 #Begin program
 #____________________
-
-import hashlib
-import json
-import datetime
-
-anchor = ["Index = None", "Time = None", "None", "Prev = None"]
-
-master_memory = []; chron_memory = []; chron_memory.append(anchor)
-
-class block:
-	def __init__(self, index, timestamp, data, prev):
-		self.index = index
-		self.timestamp = timestamp
-		self.data = data
-		self.prev = prev
-		self.hash = self.hash_block()
-	def hash_block(self):
-		a = (str(self.index)+str(self.timestamp)+str(self.data)+str(self.prev))
-		a_ser = json.dumps(a, sort_keys=True).encode('utf-8')
-		a_hash = hashlib.sha256(a_ser).hexdigest()
-		rrr = a_hash
-
-def new_block():
-	def spacer():
-		print("\n"*5)
-	spacer(); b = input("Please enter your data here:  "); spacer()
-	make_prev = chron_memory[len(chron_memory)-1][2]
-	s = block(len(chron_memory), datetime.datetime.now(), b, "prev block = {0}".format(make_prev))
-	e = {}
-	temp_list = []
-	temp_list.append(s.index); temp_list.append(s.timestamp);
-	temp_list.append(s.data); temp_list.append(s.prev)
-	e["  DATA BATCH:  "] = temp_list
-	master_memory.append(e); chron_memory.append(temp_list)
-	return e; spacer();
-
-def view_chain():
-	x = 0
-	f = len(chron_memory)
-	while x < f:
-		print("Block {0}:  {1}{2}".format(x, chron_memory[x], "\n"))
-		x = x + 1
-
-def hash(x):
-	a_hash = str(x)
-	a_hash_ser = json.dumps(a_hash, sort_keys=True).encode('utf-8')
-	a_hash_ser_hash = hashlib.sha256(a_hash_ser).hexdigest()
-	print(a_hash)
-	print(a_hash_ser_hash)
-
-#End of program
-#____________________
-
-
 
 
 import hashlib
