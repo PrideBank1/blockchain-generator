@@ -1,4 +1,7 @@
 Program Notes
 ____________________
 
--The current verison of the program has the hash functions within the block class.  The program needs to be updated so that the hash functions are within the 'new_block()' function.
+-The user can completely use the program by using only one command 'new_block()'.
+
+-The new_block() program creates a new block in the blockchain; each block consists of an index number, timestamp, data stored, data from the previous block, and the hash number of the previously mentioned data.
+
