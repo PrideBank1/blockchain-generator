@@ -5,9 +5,10 @@
 #____________________
 
 
-import hashlib
-import json
-import datetime
+if 1:
+	import hashlib
+	import json
+	import datetime
 
 anchor = ["Index = None", "Time = None", "None", "Prev = None"]
 
