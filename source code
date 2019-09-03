@@ -1,25 +1,28 @@
 #Blockchain program
-#Updated verison of the program (as of 4/14/2019).
-
-#Begin program
-#____________________
+#Updated verison of the program (as of 9/2/2019).
 
 
-if 1:
-	import hashlib
-	import json
-	import datetime
+
+#Import modules section.
+
+import hashlib
+import json
+import datetime
+
+
+#Functional variables.
 
 anchor = ["Index = None", "Time = None", "None", "Prev = None"]
-
 master_memory = []; chron_memory = []; hash_memory = []; chron_memory.append(anchor)
-
 class block:
 	def __init__(self, index, timestamp, data, prev):
 		self.index = index
 		self.timestamp = timestamp
 		self.data = data
 		self.prev = prev
+
+
+#Internal variables section.
 
 def hash(x):
 	a_hash = str(x)
@@ -50,5 +53,3 @@ def view_chain():
 	while x < f:
 		print("Block {0}:  {1}{2}".format(x, chron_memory[x], "\n"))
 		x = x + 1
-
-#End of program.
