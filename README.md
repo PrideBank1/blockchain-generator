@@ -1,2 +1,2 @@
-# blockchain-program
-My user-friendly blockchain, coded in Python.
+# blockchain-generator
+A GUI-oriented, user-friendly blockchain, coded in Python.
