@@ -1,10 +1,9 @@
-#NAME: Blockchain Program. 
-#LANGUAGE:  Python
-#CREATED BY: Sean Lyons
-#LAST UPDATED:  September 2, 2019.
-
-
-#Import modules section.
+"""
+NAME: Blockchain Program. 
+LANGUAGE:  Python
+CREATED BY: Sean Lyons
+LAST UPDATED:  September 2, 2019.
+"""
 
 import hashlib
 import json
