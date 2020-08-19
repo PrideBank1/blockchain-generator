@@ -10,6 +10,10 @@ import json
 import datetime
 
 
+def spacer():
+	print("\n"*5)
+
+
 #Functional variables.
 
 anchor = ["Index = None", "Time = None", "None", "Prev = None"]
@@ -31,8 +35,6 @@ def hash(x):
 	return a_hash_ser_hash
 
 def new_block():
-	def spacer():
-		print("\n"*5)
 	spacer(); b = input("Please enter your data here:  "); spacer()
 	make_prev = chron_memory[len(chron_memory)-1][2]
 	s = block(len(chron_memory), datetime.datetime.now(), b, "prev block = {0}".format(make_prev))
